@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sanlander/goit-react-hw-04-feedback/static/css/main.7acaea2f.css",
+    "main.js": "/sanlander/goit-react-hw-04-feedback/static/js/main.d5f2aec3.js",
+    "index.html": "/sanlander/goit-react-hw-04-feedback/index.html",
+    "main.7acaea2f.css.map": "/sanlander/goit-react-hw-04-feedback/static/css/main.7acaea2f.css.map",
+    "main.d5f2aec3.js.map": "/sanlander/goit-react-hw-04-feedback/static/js/main.d5f2aec3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.d5f2aec3.js"
+  ]
+}
