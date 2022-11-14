@@ -3,16 +3,23 @@ import { Box } from 'Box';
 import { Notification, Statistics, FeedbackOptions, Section } from './Feedback';
 
 export function App() {
-  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
+  const [good, setGoodFeedback] = useState(0);
+  const [neutral, setNeutralFeedback] = useState(0);
+  const [bad, setBadFeedback] = useState(0);
 
   const handleState = value => {
-    setFeedback(feedback => ({
-      ...feedback,
-      [value]: feedback[value] + 1,
-    }));
+    switch (value) {
+      case 'good':
+        setGoodFeedback(prSt => (prSt += 1));
+        return;
+      case 'neutral':
+        setNeutralFeedback(prSt => (prSt += 1));
+        return;
+      default:
+        setBadFeedback(prSt => (prSt += 1));
+    }
   };
 
-  const { good, neutral, bad } = feedback;
   const countTotalFeedback = good + neutral + bad;
   const countPositiveFeedbackPercentage = (
     (good / countTotalFeedback) *
@@ -23,7 +30,7 @@ export function App() {
     <Box pl={'24px'} as="section">
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={Object.keys(feedback)}
+          options={['good', 'neutral', 'bad']}
           onLeaveFeedback={handleState}
         />
       </Section>
